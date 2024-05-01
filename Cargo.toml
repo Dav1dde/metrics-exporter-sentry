@@ -1,0 +1,29 @@
+[package]
+name = "metrics-exporter-sentry"
+version = "0.1.0"
+authors = ["David Herberth <github@dav1d.de>"]
+description = "metrics-rs exporter for Sentry metrics"
+license = "MIT"
+keywords = ["metrics", "sentry"]
+categories = ["observability", "operations"]
+repository = "https://github.com/Dav1dde/metrics-exporter-sentry"
+edition = "2021"
+
+
+[lints.rust]
+missing_docs = "warn"
+
+
+[dependencies]
+metrics = "0.22"
+sentry = { version = "0.32", default-features = false, features = ["UNSTABLE_metrics"] }
+
+
+[dev-dependencies]
+sentry = "0.32"
+
+
+# docs.rs-specific configuration
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
